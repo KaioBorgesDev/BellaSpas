@@ -3,7 +3,7 @@ package com.example.classes;
 
 import com.example.interfaces.Atividades;
 
-public class Emagrecimento extends classes.Paciente implements Atividades {
+public class Emagrecimento extends Paciente implements Atividades {
     private double peso;
     private double altura;
     private double pesoIdeal;

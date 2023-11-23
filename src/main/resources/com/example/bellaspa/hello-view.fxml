@@ -55,11 +55,11 @@
       <menus>
         <Menu mnemonicParsing="false" text="Cadastrar">
           <items>
-            <MenuItem mnemonicParsing="false" onAction="#jmiCadastrar" text="Estetica" />
+            <MenuItem mnemonicParsing="false" onAction="#jmiCadastrarEstetica" text="Estetica" />
             <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Emagrecimento" />
+            <MenuItem mnemonicParsing="false" onAction="#jmiCadastrarEmagrecimento" text="Emagrecimento" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
+            <MenuItem mnemonicParsing="false" onAction="#jmiQuit" text="Quit" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Mostrar">
@@ -94,7 +94,7 @@
         </AnchorPane>
         <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
           <content>
-            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+            <AnchorPane id="Content" fx:id="paneCadastro" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
               <children>
                 <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="View" textAlignment="CENTER" textFill="$x2" wrapText="false" />
                         <Pane fx:id="painelCadastrar" layoutX="3.0" layoutY="41.0" prefHeight="501.0" prefWidth="425.0">
@@ -107,19 +107,20 @@
                               <TextField fx:id="telefones" layoutX="238.0" layoutY="62.0" />
                               <TextField fx:id="sexos" layoutX="14.0" layoutY="194.0" />
                               <TextField fx:id="tipoAtividades" layoutX="244.0" layoutY="194.0" />
-                              <Button layoutX="147.0" layoutY="358.0" mnemonicParsing="false" onAction="#btCadastrar" prefHeight="25.0" prefWidth="152.0" text="Cadastrar" />
-                              <Pane fx:id="painelServico" layoutX="90.0" layoutY="244.0" prefHeight="65.0" prefWidth="246.0" visible="false">
-                                 <children>
-                                    <TextField fx:id="respostaServicos" layoutX="106.0" layoutY="33.0" prefHeight="25.0" prefWidth="34.0" />
-                                    <Label layoutX="96.0" layoutY="7.0" prefHeight="17.0" prefWidth="54.0" text="Serviços?" />
-                                 </children>
-                              </Pane>
-                              <Pane fx:id="painelPeso" layoutX="100.0" layoutY="254.0" prefHeight="65.0" prefWidth="246.0" visible="false">
+                              <Pane fx:id="painelPeso" layoutX="90.0" layoutY="265.0" prefHeight="112.0" prefWidth="246.0" visible="false">
                                  <children>
                                     <Label layoutX="33.0" layoutY="9.0" prefHeight="17.0" prefWidth="32.0" text="Peso" />
                                     <Label layoutX="155.0" layoutY="9.0" prefHeight="17.0" prefWidth="39.0" text="Altura" />
                                     <TextField fx:id="pesos" layoutX="14.0" layoutY="33.0" prefHeight="25.0" prefWidth="69.0" />
                                     <TextField fx:id="alturas" layoutX="140.0" layoutY="33.0" prefHeight="25.0" prefWidth="69.0" />
+                                    <Button layoutX="47.0" layoutY="73.0" mnemonicParsing="false" onAction="#btCadastrarEmagracimento" prefHeight="25.0" prefWidth="152.0" text="Cadastrar" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="painelServico" layoutX="90.0" layoutY="219.0" prefHeight="108.0" prefWidth="246.0">
+                                 <children>
+                                    <TextField fx:id="respostaServicos" layoutX="106.0" layoutY="33.0" prefHeight="25.0" prefWidth="34.0" />
+                                    <Label layoutX="96.0" layoutY="7.0" prefHeight="17.0" prefWidth="54.0" text="Serviços?" />
+                                    <Button layoutX="47.0" layoutY="69.0" mnemonicParsing="false" onAction="#btCadastrarEstetica" prefHeight="25.0" prefWidth="152.0" text="Cadastrar" />
                                  </children>
                               </Pane>
                            </children>
@@ -128,12 +129,17 @@
             </AnchorPane>
           </content>
         </ScrollPane>
-        <AnchorPane prefHeight="551.0" prefWidth="223.0">
+        <AnchorPane fx:id="paneServico" prefHeight="551.0" prefWidth="178.0">
           <children>
             <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
-                  <Label layoutX="83.0" layoutY="107.0" text="Servico 1:" />
-                  <Label layoutX="83.0" layoutY="221.0" text="Servico 2:" />
-                  <Label layoutX="83.0" layoutY="332.0" text="Servico 3:" />
+                  <Label fx:id="lbServ" layoutX="83.0" layoutY="107.0" text="Qual Servico? " />
+                  <Label fx:id="lbServ1" layoutX="83.0" layoutY="234.0" text="Servico 2:" visible="false" />
+                  <Label fx:id="lbServ2" layoutX="83.0" layoutY="371.0" text="Servico 3:" visible="false" />
+                  <TextField fx:id="tfServico" layoutX="36.0" layoutY="132.0" />
+                  <TextField fx:id="tfServico1" layoutX="34.0" layoutY="263.0" visible="false" />
+                  <TextField fx:id="tfServico2" layoutX="36.0" layoutY="397.0" visible="false" />
+                  <Label layoutX="109.0" layoutY="41.0" />
+                  <Button layoutX="67.0" layoutY="451.0" mnemonicParsing="false" text="Cadastrar Serviço" />
           </children>
         </AnchorPane>
       </items>

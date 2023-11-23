@@ -1,4 +1,4 @@
-package classes;
+package com.example.classes;
 
 public abstract class Paciente {
     protected String nome;
@@ -20,5 +20,9 @@ public abstract class Paciente {
                 +"\nSexo: " + sexo
                 + "\nTipoAtividade: " + tipoAtividade;
         }
+
+    public String getNome() {
+        return nome;
     }
+}
 
